@@ -1,4 +1,4 @@
-import { batch, For, onCleanup, Show, type Component } from "solid-js";
+import { batch, onCleanup, Show, type Component } from "solid-js";
 import { computed, reactive, ref, toRaw } from "@vue/reactivity";
 
 const ESCAPE_KEY = 27;
@@ -20,10 +20,10 @@ const TodoApp: Component = () => {
   const counter = ref(1);
   const editingTodoId = ref<number>();
   const todoList = reactive<Todo[]>([
-    { id: counter.value++, title: "Use Solid 1", completed: false },
-    { id: counter.value++, title: "Use Solid 2", completed: true },
-    { id: counter.value++, title: "Use Solid 3", completed: false },
-    { id: counter.value++, title: "Use Solid 4", completed: true }
+    { id: counter.value++, title: "Use vue reactivity in SolidJS 1", completed: false },
+    { id: counter.value++, title: "Use vue reactivity in SolidJS 2", completed: true },
+    { id: counter.value++, title: "Use vue reactivity in SolidJS 3", completed: false },
+    { id: counter.value++, title: "Use vue reactivity in SolidJS 4", completed: true }
   ]);
   const remainingCount = computed(() => todoList.length - todoList.filter((todo) => todo.completed).length);
 
@@ -106,38 +106,36 @@ const TodoApp: Component = () => {
           />
           <label for="toggle-all" />
           <ul class="todo-list">
-            <For each={filterList.value}>
-              {(todo) => (
-                <li
-                  class="todo"
-                  classList={{
-                    editing: editingTodoId.value === todo.id,
-                    completed: todo.completed,
-                  }}
-                >
-                  <div class="view">
-                    <input
-                      class="toggle"
-                      type="checkbox"
-                      checked={todo.completed}
-                      onInput={[toggle, todo.id]}
-                    />
-                    <label onDblClick={[setEditing, todo.id]}>
-                      {todo.title}
-                    </label>
-                    <button class="destroy" onClick={[removeTodo, todo.id]} />
-                  </div>
-                  <Show when={editingTodoId.value === todo.id}>
-                    <input
-                      class="edit"
-                      value={todo.title}
-                      onFocusOut={[save, todo.id]}
-                      onKeyUp={[doneEditing, todo.id]}
-                    />
-                  </Show>
-                </li>
-              )}
-            </For>
+            {filterList.value.map((todo) => (
+              <li
+                class="todo"
+                classList={{
+                  editing: editingTodoId.value === todo.id,
+                  completed: todo.completed,
+                }}
+              >
+                <div class="view">
+                  <input
+                    class="toggle"
+                    type="checkbox"
+                    checked={todo.completed}
+                    onInput={[toggle, todo.id]}
+                  />
+                  <label onDblClick={[setEditing, todo.id]}>
+                    {todo.title}
+                  </label>
+                  <button class="destroy" onClick={[removeTodo, todo.id]} />
+                </div>
+                <Show when={editingTodoId.value === todo.id}>
+                  <input
+                    class="edit"
+                    value={todo.title}
+                    onFocusOut={[save, todo.id]}
+                    onKeyUp={[doneEditing, todo.id]}
+                  />
+                </Show>
+              </li>
+            ))}
           </ul>
         </section>
 
