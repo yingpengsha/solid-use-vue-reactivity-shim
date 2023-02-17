@@ -1,4 +1,4 @@
-# ts-lib-template
+# solid-use-vue-reactivity-shim
 
 ## 🚀 Features
 
@@ -9,7 +9,7 @@
 
 ## 🦄 Using this template
 
-- Search `ts-lib-template` and replace it with your custom package name.
+- Search `solid-use-vue-reactivity-shim` and replace it with your custom package name.
 - Search `yingpengsha` and replace it with your name.
 
 ## 🌸 Thanks
@@ -18,4 +18,4 @@ This project is heavily inspired by [egoist/ts-lib-starter](https://github.com/e
 
 ## 📄 License
 
-[MIT License](https://github.com/yingpengsha/ts-lib-template/blob/main/LICENSE) &copy; 2021-PRESENT [PengshaYing](https://github.com/yingpengsha)
+[MIT License](https://github.com/yingpengsha/solid-use-vue-reactivity-shim/blob/main/LICENSE) &copy; 2021-PRESENT [PengshaYing](https://github.com/yingpengsha)

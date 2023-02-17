@@ -1,10 +1,10 @@
 {
-  "name": "ts-lib-template",
+  "name": "solid-use-vue-reactivity-shim",
   "version": "0.0.1",
   "license": "MIT",
   "author": "Pengsha Ying <yingfusheng@foxmail.com>",
-  "description": "😎 Awesome typescript library template",
-  "repository": "git@github.com:yingpengsha/ts-lib-template.git",
+  "description": "Use @vue/reactivity in Solid.js",
+  "repository": "git@github.com:yingpengsha/solid-use-vue-reactivity-shim.git",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -15,38 +15,21 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix"
-    ]
-  },
   "scripts": {
     "dev": "tsup --watch --sourcemap --env.NODE_ENV development",
     "build": "tsup --env.NODE_ENV production",
-    "test:dev": "vitest --passWithNoTests",
-    "test": "vitest run --passWithNoTests",
-    "lint": "eslint \"**/*.{js,ts}\"",
     "release": "bump --commit --push --tag && pnpm publish",
     "reset": "rimraf ./node_modules && pnpm install",
-    "prepare": "husky install",
     "postinstall": "npx only-allow pnpm"
+  },
+  "peerDependencies": {
+    "@vue/reactivity": "^3.0.0",
+    "solid-js": "^1.3.0"
   },
   "devDependencies": {
     "@jsdevtools/version-bump-prompt": "^6.1.0",
-    "@types/node": "^16.18.8",
-    "@typescript-eslint/eslint-plugin": "^5.46.0",
-    "@typescript-eslint/parser": "^5.46.0",
-    "eslint": "^8.29.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-define-config": "^1.12.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.6.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "husky": "^7.0.4",
-    "lint-staged": "^11.2.6",
     "rimraf": "^3.0.2",
     "tsup": "^5.12.9",
-    "typescript": "^4.9.4",
-    "vitest": "^0.25.7"
+    "typescript": "^4.9.4"
   }
 }

@@ -1,7 +1,21 @@
-if (__DEV__) {
-  console.log('Now it\'s development mode')
-} else if (__PROD__) {
-  console.log('Now it\'s production mode')
-}
+import { ReactiveEffect } from '@vue/reactivity'
+import { enableExternalSource } from 'solid-js'
 
-export default () => console.log('Welcome to use this template!')
+enableExternalSource((getter, trigger) => {
+  let result: any
+
+  const reactiveEffect = new ReactiveEffect(() => {
+    result = getter(result)
+  }, () => trigger())
+
+  return {
+    track: (preValue) => {
+      result = preValue
+      reactiveEffect.run()
+      return result
+    },
+    dispose: () => {
+      reactiveEffect.stop()
+    }
+  }
+})

@@ -1,0 +1,22 @@
+{
+  "name": "vite-template-solid",
+  "private": true,
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "vite": "^4.1.1",
+    "vite-plugin-solid": "^2.5.0"
+  },
+  "dependencies": {
+    "@vue/reactivity": "^3.2.47",
+    "solid-js": "^1.6.10",
+    "solid-use-vue-reactivity-shim": "workspace:*",
+    "todomvc-app-css": "^2.4.2",
+    "todomvc-common": "^1.0.5"
+  }
+}
