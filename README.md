@@ -1,21 +1,7 @@
 # solid-use-vue-reactivity-shim
 
-## 🚀 Features
-
-- Package manager [pnpm](https://pnpm.js.org), safe and fast
-- Release with [@jsdevtools/version-bump-prompt](https://jstools.dev/version-bump-prompt)
-- Bundle with [tsup](https://github.com/egoist/tsup)
-- Test with [vitest](https://vitest.dev/)
-
-## 🦄 Using this template
-
-- Search `solid-use-vue-reactivity-shim` and replace it with your custom package name.
-- Search `yingpengsha` and replace it with your name.
-
-## 🌸 Thanks
-
-This project is heavily inspired by [egoist/ts-lib-starter](https://github.com/egoist/ts-lib-starter)
+Use @vue/reactivity in Solid.js
 
 ## 📄 License
 
-[MIT License](https://github.com/yingpengsha/solid-use-vue-reactivity-shim/blob/main/LICENSE) &copy; 2021-PRESENT [PengshaYing](https://github.com/yingpengsha)
+[MIT License](https://github.com/yingpengsha/solid-use-vue-reactivity-shim/blob/main/LICENSE) &copy; 2023-PRESENT [PengshaYing](https://github.com/yingpengsha)
