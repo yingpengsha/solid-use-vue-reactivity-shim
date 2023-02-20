@@ -1,6 +1,6 @@
 {
   "name": "solid-use-vue-reactivity-shim",
-  "version": "0.0.1",
+  "version": "0.0.1-beta.1",
   "license": "MIT",
   "author": "Pengsha Ying <yingfusheng@foxmail.com>",
   "description": "Use @vue/reactivity in Solid.js",
